@@ -10,9 +10,9 @@ abstract class BaseActivity<B : ViewBinding> : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = getBindingVariable()
+        binding = getViewBinding()
         setContentView(binding.root)
     }
 
-    abstract fun getBindingVariable(): B
+    abstract fun getViewBinding(): B
 }
