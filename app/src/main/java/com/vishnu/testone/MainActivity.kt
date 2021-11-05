@@ -5,5 +5,5 @@ import com.vishnu.testone.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
-    override fun getBindingVariable() = ActivityMainBinding.inflate(layoutInflater)
+    override fun getViewBinding() = ActivityMainBinding.inflate(layoutInflater)
 }
