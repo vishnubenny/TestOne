@@ -22,6 +22,7 @@ class HomeFragment : BaseFragment<HomeFragmentBinding>() {
         super.onViewCreated(view, savedInstanceState)
         binding()?.apply {
             btnValidateOtp.setOnClickListener {
+                hideKeyboard()
                 if (edtTxtOtp.text?.toString() == "0612") {
                     view.findNavController()
                         .navigate(R.id.action_homeFragment_to_browserFragment)

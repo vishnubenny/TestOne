@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
+import com.vishnu.testone.util.extension.hideKeyboard
+import com.vishnu.testone.util.extension.orDefault
 
 abstract class BaseFragment<B : ViewBinding> : Fragment() {
 
@@ -25,6 +27,12 @@ abstract class BaseFragment<B : ViewBinding> : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
+    }
+
+    fun hideKeyboard(): Boolean {
+        return binding()?.root
+            ?.hideKeyboard()
+            .orDefault()
     }
 
     abstract fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?): B
